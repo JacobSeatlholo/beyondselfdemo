@@ -1,0 +1,168 @@
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/fraunces";
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  /* Beyond Self brand tokens */
+  --color-cocoa: var(--cocoa);
+  --color-cocoa-deep: var(--cocoa-deep);
+  --color-leaf: var(--leaf);
+  --color-leaf-deep: var(--leaf-deep);
+  --color-sun: var(--sun);
+  --color-ember: var(--ember);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Beyond Self brand — warm sun & earth */
+  --background: #fdf9f3;
+  --foreground: #2a1d12;
+  --card: #ffffff;
+  --card-foreground: #2a1d12;
+  --popover: #ffffff;
+  --popover-foreground: #2a1d12;
+  --primary: #e07a2a;
+  --primary-foreground: #fff8f0;
+  --secondary: #f7c948;
+  --secondary-foreground: #3e2a1b;
+  --muted: #f6efe5;
+  --muted-foreground: #8a7767;
+  --accent: #fbe9d7;
+  --accent-foreground: #5a3e2b;
+  --destructive: #c0392b;
+  --border: #ebdfd0;
+  --input: #ebdfd0;
+  --ring: #e07a2a;
+  --chart-1: #e07a2a;
+  --chart-2: #f7c948;
+  --chart-3: #3e8e41;
+  --chart-4: #8a5a33;
+  --chart-5: #b3541e;
+  --sidebar: #fdf9f3;
+  --sidebar-foreground: #2a1d12;
+  --sidebar-primary: #e07a2a;
+  --sidebar-primary-foreground: #fff8f0;
+  --sidebar-accent: #fbe9d7;
+  --sidebar-accent-foreground: #5a3e2b;
+  --sidebar-border: #ebdfd0;
+  --sidebar-ring: #e07a2a;
+  /* Brand extras */
+  --cocoa: #4a2e1f;
+  --cocoa-deep: #33200f;
+  --leaf: #3e8e41;
+  --leaf-deep: #2f6e32;
+  --sun: #f7c948;
+  --ember: #e07a2a;
+  --cream: #fdf9f3;
+  --sand: #f6efe5;
+}
+
+.dark {
+  --background: #1d1309;
+  --foreground: #f6efe5;
+  --card: #2a1d12;
+  --card-foreground: #f6efe5;
+  --popover: #2a1d12;
+  --popover-foreground: #f6efe5;
+  --primary: #f0a05a;
+  --primary-foreground: #33200f;
+  --secondary: #f7c948;
+  --secondary-foreground: #33200f;
+  --muted: #362617;
+  --muted-foreground: #c4b3a1;
+  --accent: #362617;
+  --accent-foreground: #f6efe5;
+  --destructive: #e74c3c;
+  --border: #4a3826;
+  --input: #4a3826;
+  --ring: #f0a05a;
+  --chart-1: #f0a05a;
+  --chart-2: #f7c948;
+  --chart-3: #5cab5f;
+  --chart-4: #b98a5e;
+  --chart-5: #d97c46;
+  --sidebar: #2a1d12;
+  --sidebar-foreground: #f6efe5;
+  --sidebar-primary: #f0a05a;
+  --sidebar-primary-foreground: #33200f;
+  --sidebar-accent: #362617;
+  --sidebar-accent-foreground: #f6efe5;
+  --sidebar-border: #4a3826;
+  --sidebar-ring: #f0a05a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv11", "ss01";
+  }
+  section[id] {
+    scroll-margin-top: 88px;
+  }
+  ::selection {
+    background: #f7c948;
+    color: #33200f;
+  }
+}
+
+@layer utilities {
+  /* Sun-ray decorative background inspired by the Beyond Self logo */
+  .sun-rays {
+    background-image: repeating-conic-gradient(
+      from -90deg at 50% 120%,
+      rgba(247, 201, 72, 0.14) 0deg 4deg,
+      transparent 4deg 12deg
+    );
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
